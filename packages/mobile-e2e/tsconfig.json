@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "noEmit": true,
+    "types": ["node", "webdriverio"]
+  },
+  "include": ["fixtures", "screens", "specs", "playwright.config.ts"],
+  "references": [
+    { "path": "../core" },
+    { "path": "../test-data" }
+  ]
+}

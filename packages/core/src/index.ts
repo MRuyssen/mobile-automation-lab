@@ -1,0 +1,11 @@
+export { env, envOptional } from "./config.js";
+export type { Platform, Target, TargetConfig } from "./targets.js";
+export { APP_IDS, MAIN_ACTIVITY, APP_VERSION } from "./app-ids.js";
+export { buildCapabilities } from "./capabilities/index.js";
+export { el, byText } from "./platform/selectors.js";
+export { getAlertText, acceptAlert, dismissAlert } from "./platform/alerts.js";
+export { hideKeyboard } from "./platform/keyboard.js";
+export { terminateApp, activateApp, resetApp } from "./platform/app-lifecycle.js";
+export type { RunRecord, FailureInfo, ToolVersions, Artifacts } from "./metrics/record.js";
+export { generateRunId } from "./metrics/record.js";
+export { writeRunRecord } from "./metrics/writer.js";

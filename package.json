@@ -1,0 +1,40 @@
+{
+  "name": "mobile-automation-lab",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "apps:download": "tsx scripts/download-apps.ts",
+    "appium": "cross-env APPIUM_HOME=.appium appium --port ${APPIUM_PORT:-4723}",
+    "appium:setup": "cross-env APPIUM_HOME=.appium appium driver install uiautomator2@8.7.0",
+    "test:local:android": "npx playwright test --project=android-local",
+    "test:local:ios": "npx playwright test --project=ios-local",
+    "maestro:local:android": "tsx scripts/maestro-run.ts android",
+    "maestro:local:ios": "tsx scripts/maestro-run.ts ios",
+    "data:maestro": "tsx scripts/generate-maestro-data.ts",
+    "flake": "tsx scripts/flake.ts",
+    "cloud:bs:appium": "echo Not implemented — S3",
+    "cloud:bs:maestro": "echo Not implemented — S3",
+    "cloud:tm:appium": "echo Not implemented — S3",
+    "cloud:tm:maestro": "echo Not implemented — S3",
+    "metrics:report": "tsx scripts/report.ts",
+    "typecheck": "tsc --build",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "^26.6.5",
+    "@typescript-eslint/eslint-plugin": "8.71.1",
+    "@typescript-eslint/parser": "8.71.1",
+    "appium": "3.8.0",
+    "cross-env": "7.0.3",
+    "eslint": "9.29.0",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "webdriverio": "9.32.0",
+    "zod": "4.6.5"
+  }
+}

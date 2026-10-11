@@ -1,0 +1,52 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(npm ci)",
+      "Bash(npm run apps:*)",
+      "Bash(npm run appium:*)",
+      "Bash(npm run test:local:*)",
+      "Bash(npm run maestro:local:*)",
+      "Bash(npm run data:*)",
+      "Bash(npm run flake:*)",
+      "Bash(npm run metrics:*)",
+      "Bash(npm run typecheck)",
+      "Bash(npm run lint)",
+      "Bash(npx playwright test:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx tsx:*)",
+      "Bash(npx appium:*)",
+      "Bash(maestro test:*)",
+      "Bash(maestro hierarchy:*)",
+      "Bash(maestro --version)",
+      "Bash(adb devices)",
+      "Bash(adb shell:*)",
+      "Bash(adb install:*)",
+      "Bash(adb logcat:*)",
+      "Bash(xcrun simctl:*)",
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:www.browserstack.com)",
+      "WebFetch(domain:www.testmuai.com)",
+      "WebFetch(domain:docs.maestro.dev)",
+      "WebFetch(domain:appium.io)",
+      "WebFetch(domain:webdriver.io)",
+      "WebFetch(domain:playwright.dev)",
+      "WebFetch(domain:github.com)"
+    ],
+    "ask": [
+      "Bash(npm run cloud:*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Bash(cat .env:*)",
+      "Bash(curl:*)",
+      "Bash(git push:*)",
+      "Bash(npm publish:*)"
+    ]
+  }
+}

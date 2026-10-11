@@ -1,0 +1,9 @@
+{
+  "files": [],
+  "references": [
+    { "path": "packages/test-data" },
+    { "path": "packages/core" },
+    { "path": "packages/mobile-e2e" },
+    { "path": "scripts" }
+  ]
+}

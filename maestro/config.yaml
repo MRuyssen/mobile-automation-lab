@@ -1,0 +1,3 @@
+# Maestro config — mobile-automation-lab
+# App under test: WebdriverIO native demo app v2.2.0
+appId: com.wdiodemoapp

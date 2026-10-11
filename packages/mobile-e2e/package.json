@@ -1,0 +1,10 @@
+{
+  "name": "@mal/mobile-e2e",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@mal/core": "*",
+    "@mal/test-data": "*"
+  }
+}

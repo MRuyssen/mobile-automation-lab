@@ -1,0 +1,13 @@
+{
+  "name": "@mal/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./*": "./src/*.ts"
+  },
+  "dependencies": {
+    "@mal/test-data": "*"
+  }
+}

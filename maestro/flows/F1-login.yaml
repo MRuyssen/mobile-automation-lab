@@ -1,0 +1,67 @@
+# F1 Login — all three cases
+# Data comes from packages/test-data via the generated data bridge
+appId: com.wdiodemoapp
+
+---
+
+# Load test data
+- runScript: ../.generated/data.js
+
+# --- Case a: valid login ---
+- tapOn: "Login"
+- assertVisible: "Login-screen"
+- tapOn: "button-login-container"
+
+- tapOn: "input-email"
+- inputText: ${output.users.valid.email}
+- tapOn: "input-password"
+- inputText: ${output.users.valid.password}
+- hideKeyboard
+- tapOn: "button-LOGIN"
+
+# Wait for and verify the success alert
+- assertVisible: ${output.texts.alerts.loginSuccess.title}
+- assertVisible: ${output.texts.alerts.loginSuccess.message}
+- tapOn: ${output.texts.alerts.loginSuccess.button}
+
+# --- Case b: validation errors ---
+# Reset: relaunch the app
+- clearState
+- launchApp
+
+- tapOn: "Login"
+- assertVisible: "Login-screen"
+- tapOn: "button-login-container"
+
+- tapOn: "input-email"
+- inputText: ${output.users.invalidEmail.email}
+- tapOn: "input-password"
+- inputText: ${output.users.shortPassword.password}
+- hideKeyboard
+- tapOn: "button-LOGIN"
+
+# Both error texts should be visible
+- assertVisible: ${output.texts.errors.invalidEmail}
+- assertVisible: ${output.texts.errors.shortPassword}
+
+# --- Case c: sign-up ---
+- clearState
+- launchApp
+
+- tapOn: "Login"
+- assertVisible: "Login-screen"
+- tapOn: "button-sign-up-container"
+
+- tapOn: "input-email"
+- inputText: "lab+maestro@example.com"
+- tapOn: "input-password"
+- inputText: ${output.users.valid.password}
+- tapOn: "input-repeat-password"
+- inputText: ${output.users.valid.password}
+- hideKeyboard
+- tapOn: "button-SIGN UP"
+
+# Wait for and verify the sign-up success alert
+- assertVisible: ${output.texts.alerts.signUpSuccess.title}
+- assertVisible: ${output.texts.alerts.signUpSuccess.message}
+- tapOn: ${output.texts.alerts.signUpSuccess.button}

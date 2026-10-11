@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "../dist-scripts",
+    "rootDir": ".",
+    "noEmit": true,
+    "types": ["node"]
+  },
+  "include": ["."],
+  "references": [
+    { "path": "../packages/test-data" },
+    { "path": "../packages/core" }
+  ]
+}

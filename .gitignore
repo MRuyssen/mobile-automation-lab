@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env
+.env.local
+apps/
+.appium/
+.cache/
+maestro/.generated/
+test-results/
+playwright-report/
+*.log
+.DS_Store
+CLAUDE.local.md
+.claude/settings.local.json
